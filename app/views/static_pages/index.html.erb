@@ -1,2 +1,46 @@
 <h1>StaticPages#index</h1>
-<p>Find me in app/views/static_pages/index.html.erb</p>
+
+
+    <p data-toggler-target="elem">I am a hidden element.</p>
+     <button data-action="click->toggler#toggle">Hide/unhide</button>
+    <p data-toggler-target="elem">Another hidden element.</p>
+    <p data-toggler-target="elem" class="hidden" >An element hidding asynchronously with the ones above.</p>
+    <p data-toggler-target="elem" data-action="click->toggler#toggle">I am a clickable hidding element.</p>
+    <p data-toggler-target="elem">Another hidden element.</p>
+</div>
+
+<br>
+
+<div data-controller="toggler" data-toggler-change-class="hidden">
+    <p data-toggler-target="elem">Controllers can be reused. Try by clicking the button below.</p>
+    <button data-action="click->toggler#toggle">Hide/unhide</button>
+</div>
+
+<br>
+
+<div data-controller="toggler" data-toggler-change-class="highlight">
+  <input type="checkbox" id="checkbox" name="checkbox" data-action="click->toggler#toggle">
+  <label for="checkbox" data-toggler-target="elem">Click to highlight me</label>
+</div>
+
+<br>
+
+<div data-controller="toggler" data-toggler-change-class="dropdown" data-toggler-target="elem" data-action="click->toggler#toggle">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+
+<br>
+
+<div data-controller="limit" data-limit-warn-class="exceeded" >
+  <p>The following text field has a character limitation of 7.</p>
+ <input type="text" data-action="input->limit#warn" data-limit-target="elem">
+</div>
+
+
+
+   
